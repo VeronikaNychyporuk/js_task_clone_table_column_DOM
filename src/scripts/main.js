@@ -3,8 +3,8 @@
 const table = document.querySelector('table');
 
 for (const row of table.rows) {
-  const second = row.querySelector(':nth-child(2)').cloneNode(true);
-  const fourth = row.querySelector(':nth-child(4)');
+  const secondCellCopy = row.cells[1].cloneNode(true);
+  const lastCell = row.cells[row.cells.length - 1];
 
-  fourth.after(second);
+  lastCell.before(secondCellCopy);
 }
